@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Postagens{% endblock %}
+
+{% block content %}
+    <h1>Todos os posts</h1>
+    
+    <a href="{% url 'post-create'%}">Criar Post</a>
+    
+    {% for post in posts %}
+    <img src="{{post.image.url}}" width="150" alt="{{post.title}}">
+    <p>{{post.title}}</p>
+{% endfor %}
+
+{% endblock %}
