@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Detalhes Postagm{% endblock %}
+{% block content %}
+    <h1>Detalhes do Post: {{post.title}}</h1>
+    <p>{{post.created_at}}</p>
+    <img src="{{post.image.url}}" width="300" alt="{{post.title}}">
+    <p>{{post.description}}</p>
+{% endblock content %}

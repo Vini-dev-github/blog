@@ -28,3 +28,12 @@ def create_post(request):
     else:
         form = PostForm()
         return render(request, 'post-form.html', {"form": form})
+
+def post_details(request, id):
+    template_name = 'post-detail.html'
+    post = Posts.objects.get(id=id)
+    print(post)
+    context = {
+        'post': post
+    }
+    return render(request, template_name, context)

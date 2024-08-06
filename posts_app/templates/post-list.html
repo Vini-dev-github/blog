@@ -8,6 +8,7 @@
     <a href="{% url 'post-create'%}">Criar Post</a>
     
     {% for post in posts %}
+    <a href="{% url 'post-detail' post.id %}">Ver Detalhes</a>
     <img src="{{post.image.url}}" width="150" alt="{{post.title}}">
     <p>{{post.title}}</p>
 {% endfor %}
