@@ -9,6 +9,7 @@
     
     {% for post in posts %}
     <a href="{% url 'post-detail' post.id %}">Ver Detalhes</a>
+    <a href="{% url 'post-update' post.id%}">Atualizar</a>
     <img src="{{post.image.url}}" width="150" alt="{{post.title}}">
     <p>{{post.title}}</p>
 {% endfor %}
