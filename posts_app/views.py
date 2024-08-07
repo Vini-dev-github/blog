@@ -49,3 +49,11 @@ def post_update(request, id):
         return HttpResponseRedirect(reverse('post-detail', args=[post.id]))
     
     return render(request, 'post-form.html', {'form': form})
+
+
+def post_delete(request, id):
+    post = Posts.objects.get(id=id)
+    post.delete()
+    messages.success(request, 'Post deletado com sucesso')
+
+    return HttpResponseRedirect(reverse('post-list'))
