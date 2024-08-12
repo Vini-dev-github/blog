@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Detalhes Postagm{% endblock %}
 {% block content %}
-    <a href="{% url 'post-update' post.id%}">Atualizar</a>
+    <div class="text-center">
 
-    <a href="{% url 'post-delete' post.id%}">Deletar</a>
-    
-    <h1>Detalhes do Post: {{post.title}}</h1>
-    <p>{{post.created_at}}</p>
-    <img src="{{post.image.url}}" width="300" alt="{{post.title}}">
-    <p>{{post.description}}</p>
+        <a class="btn btn-warning" href="{% url 'post-update' post.id%}">Atualizar</a>    
+        <a class="btn btn-danger" href="{% url 'post-delete' post.id%}">Deletar</a>
+        
+        <h1>Detalhes do Post: {{post.title}}</h1>
+
+        <p>{{post.created_at}}</p>
+
+        <img src="{{post.image.url}}" width="300" alt="{{post.title}}">
+
+        <p>{{post.description}}</p>
+
+    </div>
 {% endblock content %}
